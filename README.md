@@ -1,4 +1,10 @@
-== README
+Ruby: 		1.9.3
+Rails:		4.0.1
+sqlite3:	1.3.9
+Rspec:		2.14.8
+
+
+ README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
