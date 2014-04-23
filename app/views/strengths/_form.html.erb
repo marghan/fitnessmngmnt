@@ -1,0 +1,29 @@
+<%= form_for(@strength) do |f| %>
+  <% if @strength.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@strength.errors.count, "error") %> prohibited this strength from being saved:</h2>
+
+      <ul>
+      <% @strength.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :exerciseType %><br>
+    <%= f.text_field :exerciseType %>
+  </div>
+  <div class="field">
+    <%= f.label :maxRepetitions %><br>
+    <%= f.number_field :maxRepetitions %>
+  </div>
+  <div class="field">
+    <%= f.label :exerciseWeight %><br>
+    <%= f.text_field :exerciseWeight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

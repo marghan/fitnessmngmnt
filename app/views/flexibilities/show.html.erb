@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exercisetype:</strong>
+  <%= @flexibility.exerciseType %>
+</p>
+
+<p>
+  <strong>Stretchdistance:</strong>
+  <%= @flexibility.stretchDistance %>
+</p>
+
+<%= link_to 'Edit', edit_flexibility_path(@flexibility) %> |
+<%= link_to 'Back', flexibilities_path %>

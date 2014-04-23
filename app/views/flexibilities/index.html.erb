@@ -1,0 +1,29 @@
+<h1>Listing flexibilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercisetype</th>
+      <th>Stretchdistance</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flexibilities.each do |flexibility| %>
+      <tr>
+        <td><%= flexibility.exerciseType %></td>
+        <td><%= flexibility.stretchDistance %></td>
+        <td><%= link_to 'Show', flexibility %></td>
+        <td><%= link_to 'Edit', edit_flexibility_path(flexibility) %></td>
+        <td><%= link_to 'Destroy', flexibility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flexibility', new_flexibility_path %>

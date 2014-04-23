@@ -1,0 +1,25 @@
+<%= form_for(@flexibility) do |f| %>
+  <% if @flexibility.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flexibility.errors.count, "error") %> prohibited this flexibility from being saved:</h2>
+
+      <ul>
+      <% @flexibility.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :exerciseType %><br>
+    <%= f.text_field :exerciseType %>
+  </div>
+  <div class="field">
+    <%= f.label :stretchDistance %><br>
+    <%= f.text_field :stretchDistance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

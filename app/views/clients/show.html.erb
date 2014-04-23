@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clientid:</strong>
+  <%= @client.ClientID %>
+</p>
+
+<p>
+  <strong>Clientname:</strong>
+  <%= @client.ClientName %>
+</p>
+
+<p>
+  <strong>Clientaddress:</strong>
+  <%= @client.ClientAddress %>
+</p>
+
+<p>
+  <strong>Creditcardno:</strong>
+  <%= @client.creditCardNo %>
+</p>
+
+<p>
+  <strong>Emergencycontact:</strong>
+  <%= @client.emergencyContact %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @client.startdate %>
+</p>
+
+<p>
+  <strong>Appointmentcount:</strong>
+  <%= @client.appointmentCount %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

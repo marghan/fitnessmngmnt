@@ -11,7 +11,106 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423044501) do
+ActiveRecord::Schema.define(version: 20140423122135) do
+
+  create_table "appointments", force: true do |t|
+    t.integer  "ApptID"
+    t.integer  "clientID"
+    t.integer  "trainerID"
+    t.integer  "locationID"
+    t.date     "apptDate"
+    t.time     "apptTime"
+    t.string   "apptType"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cardios", force: true do |t|
+    t.string   "exerciseType"
+    t.float    "minutesPerMile"
+    t.integer  "exerciseLevel"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clients", force: true do |t|
+    t.integer  "ClientID"
+    t.string   "ClientName"
+    t.string   "ClientAddress"
+    t.integer  "creditCardNo"
+    t.string   "emergencyContact"
+    t.datetime "startdate"
+    t.integer  "appointmentCount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercises", force: true do |t|
+    t.integer  "exerciseID"
+    t.string   "exerciseType"
+    t.string   "exerciseName"
+    t.string   "muscleGroup"
+    t.string   "equipment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fitness_metrics", force: true do |t|
+    t.integer  "metricsID"
+    t.integer  "clientID"
+    t.integer  "exerciseID"
+    t.date     "metricsDate"
+    t.float    "weight"
+    t.integer  "Age"
+    t.float    "height"
+    t.boolean  "sex"
+    t.float    "fatPercent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "flexibilities", force: true do |t|
+    t.string   "exerciseType"
+    t.float    "stretchDistance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.integer  "locationID"
+    t.string   "LocationAddress"
+    t.string   "LocationPhone"
+    t.boolean  "Outdoor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "paymentID"
+    t.datetime "paymentDate"
+    t.float    "paymentAmount"
+    t.string   "paymentMethod"
+    t.integer  "invoiceID"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "strengths", force: true do |t|
+    t.string   "exerciseType"
+    t.integer  "maxRepetitions"
+    t.float    "exerciseWeight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trainers", force: true do |t|
+    t.integer  "trainerID"
+    t.string   "trainerAddress"
+    t.string   "trainerPhone"
+    t.string   "trainerEmail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

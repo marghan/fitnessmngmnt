@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exercisetype:</strong>
+  <%= @strength.exerciseType %>
+</p>
+
+<p>
+  <strong>Maxrepetitions:</strong>
+  <%= @strength.maxRepetitions %>
+</p>
+
+<p>
+  <strong>Exerciseweight:</strong>
+  <%= @strength.exerciseWeight %>
+</p>
+
+<%= link_to 'Edit', edit_strength_path(@strength) %> |
+<%= link_to 'Back', strengths_path %>

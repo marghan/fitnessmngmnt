@@ -1,4 +1,22 @@
 Fitnessmngmnt::Application.routes.draw do
+  resources :flexibilities
+
+  resources :strengths
+
+  resources :cardios
+
+  resources :exercises
+
+  resources :payments
+
+  resources :locations
+
+  resources :appointments
+
+  resources :clients
+
+  resources :trainers
+
   resources :users
    resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'

@@ -1,0 +1,26 @@
+require 'spec_helper'
+
+describe "appointments/edit" do
+  before(:each) do
+    @appointment = assign(:appointment, stub_model(Appointment,
+      :ApptID => 1,
+      :clientID => 1,
+      :trainerID => 1,
+      :locationID => 1,
+      :apptType => "MyString"
+    ))
+  end
+
+  it "renders the edit appointment form" do
+    render
+
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select "form[action=?][method=?]", appointment_path(@appointment), "post" do
+      assert_select "input#appointment_ApptID[name=?]", "appointment[ApptID]"
+      assert_select "input#appointment_clientID[name=?]", "appointment[clientID]"
+      assert_select "input#appointment_trainerID[name=?]", "appointment[trainerID]"
+      assert_select "input#appointment_locationID[name=?]", "appointment[locationID]"
+      assert_select "input#appointment_apptType[name=?]", "appointment[apptType]"
+    end
+  end
+end
