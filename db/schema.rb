@@ -55,20 +55,6 @@ ActiveRecord::Schema.define(version: 20140423122135) do
     t.datetime "updated_at"
   end
 
-  create_table "fitness_metrics", force: true do |t|
-    t.integer  "metricsID"
-    t.integer  "clientID"
-    t.integer  "exerciseID"
-    t.date     "metricsDate"
-    t.float    "weight"
-    t.integer  "Age"
-    t.float    "height"
-    t.boolean  "sex"
-    t.float    "fatPercent"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "flexibilities", force: true do |t|
     t.string   "exerciseType"
     t.float    "stretchDistance"
