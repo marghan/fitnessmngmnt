@@ -1,0 +1,31 @@
+<h1>Listing strengths</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercisetype</th>
+      <th>Maxrepetitions</th>
+      <th>Exerciseweight</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @strengths.each do |strength| %>
+      <tr>
+        <td><%= strength.exerciseType %></td>
+        <td><%= strength.maxRepetitions %></td>
+        <td><%= strength.exerciseWeight %></td>
+        <td><%= link_to 'Show', strength %></td>
+        <td><%= link_to 'Edit', edit_strength_path(strength) %></td>
+        <td><%= link_to 'Destroy', strength, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Strength', new_strength_path %>

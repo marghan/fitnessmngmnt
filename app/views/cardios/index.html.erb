@@ -1,0 +1,31 @@
+<h1>Listing cardios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercisetype</th>
+      <th>Minutespermile</th>
+      <th>Exerciselevel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cardios.each do |cardio| %>
+      <tr>
+        <td><%= cardio.exerciseType %></td>
+        <td><%= cardio.minutesPerMile %></td>
+        <td><%= cardio.exerciseLevel %></td>
+        <td><%= link_to 'Show', cardio %></td>
+        <td><%= link_to 'Edit', edit_cardio_path(cardio) %></td>
+        <td><%= link_to 'Destroy', cardio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cardio', new_cardio_path %>

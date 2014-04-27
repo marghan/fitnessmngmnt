@@ -1,0 +1,29 @@
+<%= form_for(@cardio) do |f| %>
+  <% if @cardio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cardio.errors.count, "error") %> prohibited this cardio from being saved:</h2>
+
+      <ul>
+      <% @cardio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :exerciseType %><br>
+    <%= f.text_field :exerciseType %>
+  </div>
+  <div class="field">
+    <%= f.label :minutesPerMile %><br>
+    <%= f.text_field :minutesPerMile %>
+  </div>
+  <div class="field">
+    <%= f.label :exerciseLevel %><br>
+    <%= f.number_field :exerciseLevel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
