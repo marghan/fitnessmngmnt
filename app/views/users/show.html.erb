@@ -7,6 +7,24 @@
         <%= @user.name %>
       </h1>
     </section>
+    <section>
+      <div id="chart"></div>
+        <script>
+//put in application.js later (as javascript and Ruby is in HTML)
+        var graph = new Rickshaw.Graph( {
+            element: document.querySelector("#chart"), 
+            width: 500, 
+            height: 200, 
+            series: [{
+                color: 'steelblue',
+                data: <%=  @data.html_safe%> 
+                //.html_safe: short hand method, don't escape this
+            }]
+        });
+
+        graph.render();
+        </script>
+    </section>
   </aside>
   <div class="span8">
     <% if @user.microposts.any? %>

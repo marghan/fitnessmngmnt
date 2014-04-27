@@ -12,6 +12,13 @@ class UsersController < ApplicationController
   def show
    		@user = User.find(params[:id])
       @microposts = @user.microposts.paginate(page: params[:page])
+      #treat this as json
+      @data = [
+              {:x=>2, :y=>10},
+              {x:5, y:12}
+              ].to_json
+  #need to convert data from Ruby to Json
+  #when pulling data from database
  	end
 
   def new
