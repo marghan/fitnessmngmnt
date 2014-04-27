@@ -1,0 +1,43 @@
+<h1>Listing fitness_metrics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metricsid</th>
+      <th>Clientid</th>
+      <th>Exerciseid</th>
+      <th>Metricsdate</th>
+      <th>Weight</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Sex</th>
+      <th>Fatpercent</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fitness_metrics.each do |fitness_metric| %>
+      <tr>
+        <td><%= fitness_metric.metricsID %></td>
+        <td><%= fitness_metric.clientID %></td>
+        <td><%= fitness_metric.exerciseID %></td>
+        <td><%= fitness_metric.metricsDate %></td>
+        <td><%= fitness_metric.weight %></td>
+        <td><%= fitness_metric.Age %></td>
+        <td><%= fitness_metric.height %></td>
+        <td><%= fitness_metric.sex %></td>
+        <td><%= fitness_metric.fatPercent %></td>
+        <td><%= link_to 'Show', fitness_metric %></td>
+        <td><%= link_to 'Edit', edit_fitness_metric_path(fitness_metric) %></td>
+        <td><%= link_to 'Destroy', fitness_metric, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fitness metric', new_fitness_metric_path %>

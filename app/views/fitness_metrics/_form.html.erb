@@ -1,0 +1,53 @@
+<%= form_for(@fitness_metric) do |f| %>
+  <% if @fitness_metric.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fitness_metric.errors.count, "error") %> prohibited this fitness_metric from being saved:</h2>
+
+      <ul>
+      <% @fitness_metric.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :metricsID %><br>
+    <%= f.number_field :metricsID %>
+  </div>
+  <div class="field">
+    <%= f.label :clientID %><br>
+    <%= f.number_field :clientID %>
+  </div>
+  <div class="field">
+    <%= f.label :exerciseID %><br>
+    <%= f.number_field :exerciseID %>
+  </div>
+  <div class="field">
+    <%= f.label :metricsDate %><br>
+    <%= f.date_select :metricsDate %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :Age %><br>
+    <%= f.number_field :Age %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :fatPercent %><br>
+    <%= f.text_field :fatPercent %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
