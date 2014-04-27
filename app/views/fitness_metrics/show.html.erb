@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Metricsid:</strong>
+  <%= @fitness_metric.metricsID %>
+</p>
+
+<p>
+  <strong>Clientid:</strong>
+  <%= @fitness_metric.clientID %>
+</p>
+
+<p>
+  <strong>Exerciseid:</strong>
+  <%= @fitness_metric.exerciseID %>
+</p>
+
+<p>
+  <strong>Metricsdate:</strong>
+  <%= @fitness_metric.metricsDate %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @fitness_metric.weight %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @fitness_metric.Age %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @fitness_metric.height %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @fitness_metric.sex %>
+</p>
+
+<p>
+  <strong>Fatpercent:</strong>
+  <%= @fitness_metric.fatPercent %>
+</p>
+
+<%= link_to 'Edit', edit_fitness_metric_path(@fitness_metric) %> |
+<%= link_to 'Back', fitness_metrics_path %>

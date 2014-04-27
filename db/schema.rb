@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426211734) do
+ActiveRecord::Schema.define(version: 20140427191307) do
 
   create_table "appointments", force: true do |t|
     t.integer  "ApptID"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20140426211734) do
     t.float    "weight"
     t.integer  "Age"
     t.float    "height"
-    t.boolean  "sex"
+    t.string   "sex"
     t.float    "fatPercent"
     t.datetime "created_at"
     t.datetime "updated_at"
