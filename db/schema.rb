@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423122135) do
+ActiveRecord::Schema.define(version: 20140426211734) do
 
   create_table "appointments", force: true do |t|
     t.integer  "ApptID"
@@ -55,6 +55,20 @@ ActiveRecord::Schema.define(version: 20140423122135) do
     t.datetime "updated_at"
   end
 
+  create_table "fitness_metrics", force: true do |t|
+    t.integer  "metricsID"
+    t.integer  "clientID"
+    t.integer  "exerciseID"
+    t.date     "metricsDate"
+    t.float    "weight"
+    t.integer  "Age"
+    t.float    "height"
+    t.boolean  "sex"
+    t.float    "fatPercent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "flexibilities", force: true do |t|
     t.string   "exerciseType"
     t.float    "stretchDistance"
@@ -70,6 +84,15 @@ ActiveRecord::Schema.define(version: 20140423122135) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "microposts", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
   create_table "payments", force: true do |t|
     t.integer  "paymentID"
