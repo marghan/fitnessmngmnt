@@ -17,8 +17,10 @@
             height: 200, 
             series: [{
                 color: 'steelblue',
-                data: <%=  @data.html_safe%> 
-                //.html_safe: short hand method, don't escape this
+                data: <%=  @user.graph_fat_pct.html_safe%> 
+                //.html_safe: let this string be
+                //push code from controller into model
+                //kepping controller thin
             }]
         });
 

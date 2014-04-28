@@ -3,13 +3,12 @@
 
 <%= will_paginate %>
 
+#infers that @users is a list of User 
+#objects, when called with a collection of 
+#users, Rails automatically iterates through 
+#them and renders each one with the _user.html.erb partial
 <ul class="users">
   <%= render @users %>
 </ul>
 
-<<<<<<< HEAD
 <%= will_paginate %>
-=======
-<%= will_paginate %>
-
->>>>>>> a11cf7070d11380333adc8eeed34f7f8e8f7a32c

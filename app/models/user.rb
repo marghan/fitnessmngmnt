@@ -22,6 +22,22 @@ class User < ActiveRecord::Base
     Micropost.where("user_id = ?", id)
   end
 
+  def graph_fat_pct
+    metrics = FitnessMetric.where(clientID:id)
+    #referring to individual metrics in the collection of Ruby objects
+    metrics.map.with_index do |metric,index| 
+      {x:index, y:metric.fatPercent}
+  end.to_json
+        #treat this as json
+      #[
+        #{x:metr.metricsDate},
+        #{y:FitnessMetric.where(clientID:id).fatPercent}
+      #].to_json
+  #need to convert data from Ruby to Json
+  #when pulling data from database
+    
+  end
+
   private
 
     def create_remember_token
