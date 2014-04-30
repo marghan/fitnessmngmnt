@@ -25,9 +25,9 @@ group :test do
   gem 'cucumber-rails', '1.4.0', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
   # Uncomment these lines on Windows.
-gem 'rb-notifu', '0.0.4'
-gem 'win32console', '1.3.2'
-gem 'wdm', '0.1.0'
+#gem 'rb-notifu', '0.0.4'
+#gem 'win32console', '1.3.2'
+#gem 'wdm', '0.1.0'
  end
 
 # Use SCSS for stylesheets
