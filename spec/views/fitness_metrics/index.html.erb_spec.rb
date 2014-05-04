@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "fitness_metrics/index" do
-  before(:each) do
+/  before(:each) do
     assign(:fitness_metrics, [
       stub_model(FitnessMetric,
         :metricsID => 1,
@@ -38,4 +38,5 @@ describe "fitness_metrics/index" do
     assert_select "tr>td", :text => "Sex".to_s, :count => 2
     assert_select "tr>td", :text => 1.5.to_s, :count => 2
   end
+/
 end

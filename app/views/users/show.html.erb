@@ -8,6 +8,9 @@
       </h1>
     </section>
     <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
       <div id="chart"></div>
         <script>
 //put in application.js later (as javascript and Ruby is in HTML)
@@ -29,6 +32,7 @@
     </section>
   </aside>
   <div class="span8">
+    <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
