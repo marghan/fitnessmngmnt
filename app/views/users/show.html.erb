@@ -11,23 +11,93 @@
       <%= render 'shared/stats' %>
     </section>
     <section>
-      <div id="chart"></div>
+      <div id="chart_container">
+        <div id="y_axis"></div>
+        <div id="chart"></div>
+        <div id="legend"></div>
+      </div>
+
+
         <script>
 //put in application.js later (as javascript and Ruby is in HTML)
         var graph = new Rickshaw.Graph( {
             element: document.querySelector("#chart"), 
-            width: 500, 
-            height: 200, 
+            width: 340, 
+            height: 240, 
             series: [{
                 color: 'steelblue',
+                name: "Fat Percent",
                 data: <%=  @user.graph_fat_pct.html_safe%> 
                 //.html_safe: let this string be
                 //push code from controller into model
                 //kepping controller thin
             }]
         });
+        
+        var axes = new Rickshaw.Graph.Axis.X( { 
+        graph: graph,
+        element: document.getElementById('x_axis'),
+        
+        } );
+
+        var y_axis = new Rickshaw.Graph.Axis.Y( {
+        graph: graph,
+        orientation: 'left',
+        tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+        element: document.getElementById('y_axis'),
+        } );
+
+        var legend = new Rickshaw.Graph.Legend( {
+        element: document.querySelector('#legend'),
+        graph: graph
+        } );
 
         graph.render();
+        </script>
+    </section>
+    <section>
+      <div id="chart_container2">
+        <div id="y_axis2"></div>
+        <div id="chart2"></div>
+      </div>
+      <div id="legend2"></div>
+
+
+        <script>
+//put in application.js later (as javascript and Ruby is in HTML)
+        var graph2 = new Rickshaw.Graph( {
+            element: document.querySelector("#chart2"), 
+            width: 340, 
+            height: 240, 
+            series: [{
+                color: 'steelblue',
+                name: "Height",
+                data: <%=  @user.graph_height.html_safe%> 
+                //.html_safe: let this string be
+                //push code from controller into model
+                //keeping controller thin
+            }]
+        });
+        
+        var axes2 = new Rickshaw.Graph.Axis.X( { 
+        graph: graph2,
+        element: document.getElementById('x_axis'),
+        
+        } );
+
+        var y_axis2 = new Rickshaw.Graph.Axis.Y( {
+        graph: graph2,
+        orientation: 'left',
+        tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+        element: document.getElementById('y_axis2'),
+        } );
+
+        var legend2 = new Rickshaw.Graph.Legend( {
+        element: document.querySelector('#legend2'),
+        graph: graph2
+        } );
+
+        graph2.render();
         </script>
     </section>
   </aside>

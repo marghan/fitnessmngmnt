@@ -53,6 +53,14 @@ class User < ActiveRecord::Base
       #].to_json
   #need to convert data from Ruby to Json
   #when pulling data from database
+  end
+  
+  def graph_height
+    metrics2 = FitnessMetric.where(clientID:id)
+    #referring to individual metrics in the collection of Ruby objects
+    metrics2.map.with_index do |metric2,index| 
+      {x:index, y:metric2.height}
+  end.to_json
     
   end
 
