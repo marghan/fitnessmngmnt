@@ -11,6 +11,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'rickshaw_rails', '~> 1.4.5'
+gem 'jquery-ui-rails'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
