@@ -1,5 +1,5 @@
-<h1>Listing appointments</h1>
-
+<h1>Appointments</h1>
+<!--
 <table>
   <thead>
     <tr>
@@ -24,7 +24,7 @@
         <td><%= appointment.trainerID %></td>
         <td><%= appointment.locationID %></td>
         <td><%= appointment.apptDate %></td>
-        <td><%= appointment.apptTime %></td>
+        <td><%= appointment.apptTime.to_s(:appt_time) %></td>
         <td><%= appointment.apptType %></td>
         <td><%= link_to 'Show', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
@@ -34,6 +34,24 @@
   </tbody>
 </table>
 
+ 
 <br>
-
+-->
+<div id="appointments">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>  
+  </h2> 
+  <%= calendar @date do |date| %>
+    <%= date.day %> 
+      <% if @appointments_by_date[date] %>
+        <ul>
+          <% @appointments_by_date[date].each do |appointment| %>
+            <li><%= link_to appointment.apptTime.strftime("%I:%M%p") , appointment %></li>
+          <% end %> 
+        </ul>
+    <% end %>   
+  <% end %>
+</div>
 <%= link_to 'New Appointment', new_appointment_path %>

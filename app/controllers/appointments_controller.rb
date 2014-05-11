@@ -5,6 +5,8 @@ class AppointmentsController < ApplicationController
   # GET /appointments.json
   def index
     @appointments = Appointment.all
+    @appointments_by_date = @appointments.group_by(&:apptDate)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   # GET /appointments/1
