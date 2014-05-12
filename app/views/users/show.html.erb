@@ -71,7 +71,7 @@
             height: 240, 
             series: [{
                 color: 'steelblue',
-                name: "Height",
+                name: "Body Mass Index",
                 data: <%=  @user.graph_height.html_safe%> 
                 //.html_safe: let this string be
                 //push code from controller into model
@@ -101,7 +101,7 @@
         </script>
     </section>
   </aside>
-  <div class="span8">
+  <!--<div class="span8">
     <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
@@ -110,5 +110,5 @@
       </ol>
       <%= will_paginate @microposts %>
     <% end %>
-  </div>
+  </div>-->
 </div>
